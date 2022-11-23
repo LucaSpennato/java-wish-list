@@ -1,6 +1,7 @@
 package org.generation.italy.christmas;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -20,11 +21,13 @@ public class Main {
 			String vows1 = "";
 			String vows2 = "";
 			
+			List<Character> vow = Arrays.asList(new Character[] { 'a', 'e', 'i', 'o', 'u' });
+			
 			for (int i = 0; i < o1.length(); i++) {
 				
 				char findVow = o1.charAt(i);
 				
-				if(findVow == 'a' || findVow == 'e' || findVow == 'i' || findVow == 'o' || findVow == 'u') {
+				if(vow.contains(findVow)) {
 					vows1 += findVow;
 				}
 				
@@ -93,17 +96,27 @@ public class Main {
 				String str = sc.next();
 				
 				Set<String> setChars = new HashSet<>();
-				Map<Integer, String> mapChars = new HashMap<>();
+				Map<Character, Integer> mapChars = new HashMap<>();
 				
 				for (int i = 0; i < str.length(); i++) {
 					
 					String c = str.charAt(i) + "";
 					
 					setChars.add(c);
-					
-					mapChars.put(i, c);
+
 				}
 				
+				for (Character c : str.toCharArray()) {
+					
+					if (mapChars.containsKey(c)) {
+						
+						int oldFreq = mapChars.get(c);
+						mapChars.put(c, oldFreq + 1);
+					} else {
+						
+						mapChars.put(c, 1);
+					}
+				}
 				
 				System.out.println(setChars);
 				
@@ -128,12 +141,12 @@ public class Main {
 //					mapListChars.put(i,s);
 //				}
 				
-				for (int i = 0; i < mapChars.size(); i++) {
-					
-					String s = mapChars.get(i);
-					
-					mapListChars.put(i,s);
-				}
+//				for (int i = 0; i < mapChars.size(); i++) {
+//					
+//					String s = mapChars.get(i);
+//					
+//					mapListChars.put(i,s);
+//				}
 				
 				System.out.println("Bonus map----------------");
 				System.out.println(mapListChars);
