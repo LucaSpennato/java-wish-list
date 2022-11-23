@@ -2,8 +2,10 @@ package org.generation.italy.christmas;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -90,15 +92,22 @@ public class Main {
 				String str = sc.next();
 				
 				Set<String> chars = new HashSet<>();
+				Map<Integer, String> mapChars = new HashMap<>();
 				
 				for (int i = 0; i < str.length(); i++) {
 					
-					chars.add(str.charAt(i) + "");
+					String c = str.charAt(i) + "";
 					
+					chars.add(c);
 					
+					mapChars.put(str.indexOf(c), c);
 				}
 				
 				System.out.println(chars);
+				
+				System.out.println("---------------------------------------");
+				
+				System.out.println(mapChars);
 				
 			}
 			
