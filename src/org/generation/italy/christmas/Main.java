@@ -33,12 +33,14 @@ public class Main {
 			}
 			
 			
-//			System.out.println("\nLa tua lista di regali:\n");
-//			for(String g : gifts) {
-//				
-//				System.out.println(g);
-//				
-//			}
+			if(putGift == false && gifts.size() > 0) {
+				System.out.println("La tua lista di regali:\n");
+				for(String g : gifts) {
+					
+					System.out.println(g);
+					
+				}
+			}
 			
 		
 		}
