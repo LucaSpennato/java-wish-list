@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
+import java.util.TreeMap;
 
 public class Main {
 	
@@ -111,7 +112,7 @@ public class Main {
 				System.out.println(mapChars);
 				
 				List<String> setListChars = new ArrayList<>();
-				List<String> mapListChars = new ArrayList<>();
+				Map<Integer, String> mapListChars = new TreeMap<>();
 	
 				
 				for (String string : setChars) {
@@ -123,11 +124,17 @@ public class Main {
 				System.out.println("Bonus set----------------");
 				System.out.println(setListChars);
 				
-				for (String s : mapChars.values()) {
-					mapListChars.add(s);
+//				for (String s : mapChars.values()) {
+//					mapListChars.put(i,s);
+//				}
+				
+				for (int i = 0; i < mapChars.size(); i++) {
+					
+					String s = mapChars.get(i);
+					
+					mapListChars.put(i,s);
 				}
 				
-				mapListChars.sort(new StringComparator());
 				System.out.println("Bonus map----------------");
 				System.out.println(mapListChars);
 			}
