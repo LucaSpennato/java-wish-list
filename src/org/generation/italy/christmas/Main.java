@@ -1,10 +1,19 @@
 package org.generation.italy.christmas;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+	
+	public static class StringComparator implements Comparator<String> {
+		
+		@Override
+		public int compare(String o1, String o2){
+			return o1.length() - o2.length();
+		}
+	}
 
 	public static void main(String[] args) {
 		
@@ -37,7 +46,7 @@ public class Main {
 				sc.close();
 				System.out.println("La tua lista di regali:\n");
 				
-				gifts.sort(null);
+				gifts.sort(new StringComparator());
 				
 				int i = 0;
 				for(String g : gifts) {
