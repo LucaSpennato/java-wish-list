@@ -91,24 +91,45 @@ public class Main {
 				System.out.println("Inserisci una parola: ");
 				String str = sc.next();
 				
-				Set<String> chars = new HashSet<>();
+				Set<String> setChars = new HashSet<>();
 				Map<Integer, String> mapChars = new HashMap<>();
 				
 				for (int i = 0; i < str.length(); i++) {
 					
 					String c = str.charAt(i) + "";
 					
-					chars.add(c);
+					setChars.add(c);
 					
-					mapChars.put(str.indexOf(c), c);
+					mapChars.put(i, c);
 				}
 				
-				System.out.println(chars);
+				
+				System.out.println(setChars);
 				
 				System.out.println("---------------------------------------");
 				
 				System.out.println(mapChars);
 				
+				List<String> setListChars = new ArrayList<>();
+				List<String> mapListChars = new ArrayList<>();
+	
+				
+				for (String string : setChars) {
+					
+					setListChars.add(string);
+					
+				}
+				setListChars.sort(new StringComparator());
+				System.out.println("Bonus set----------------");
+				System.out.println(setListChars);
+				
+				for (String s : mapChars.values()) {
+					mapListChars.add(s);
+				}
+				
+				mapListChars.sort(new StringComparator());
+				System.out.println("Bonus map----------------");
+				System.out.println(mapListChars);
 			}
 			
 		
