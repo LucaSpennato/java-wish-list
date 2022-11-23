@@ -19,7 +19,7 @@ public class Main {
 	
 		while (putGift) {
 			
-			System.out.println("\nVuoi aggiungere un regalo?" + "\n1- continua\n2- Fermati");
+			System.out.println("\nVuoi aggiungere un regalo?" + "\n1- Aggiungi!\n2- Fermati");
 			isAddingMore = sc.nextInt();
 			putGift = isAddingMore == 1 ? true : false;
 			
@@ -34,12 +34,15 @@ public class Main {
 			
 			
 			if(putGift == false && gifts.size() > 0) {
+				sc.close();
 				System.out.println("La tua lista di regali:\n");
 				for(String g : gifts) {
 					
 					System.out.println(g);
 					
 				}
+			}else if(putGift == false && gifts.size() == 0) {
+				System.out.println("Non hai inserito nessun regalo :/");
 			}
 			
 		
