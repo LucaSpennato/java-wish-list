@@ -2,8 +2,10 @@ package org.generation.italy.christmas;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Main {
 	
@@ -35,6 +37,7 @@ public class Main {
 				
 			}
 			
+			// in base al ritorno lui sistema prima una e poi l'altra, se +1, 0 o -1
 			return vows2.length() - vows1.length();
 		}
 	}
@@ -82,6 +85,21 @@ public class Main {
 				
 			}else if(putGift == false && gifts.size() == 0) {
 				System.out.println("Non hai inserito nessun regalo :/");
+				
+				System.out.println("Inserisci una parola: ");
+				String str = sc.next();
+				
+				Set<String> chars = new HashSet<>();
+				
+				for (int i = 0; i < str.length(); i++) {
+					
+					chars.add(str.charAt(i) + "");
+					
+					
+				}
+				
+				System.out.println(chars);
+				
 			}
 			
 		
