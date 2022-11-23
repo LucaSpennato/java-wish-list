@@ -11,7 +11,31 @@ public class Main {
 		
 		@Override
 		public int compare(String o1, String o2){
-			return o1.length() - o2.length();
+			
+			String vows1 = "";
+			String vows2 = "";
+			
+			for (int i = 0; i < o1.length(); i++) {
+				
+				char findVow = o1.charAt(i);
+				
+				if(findVow == 'a' || findVow == 'e' || findVow == 'i' || findVow == 'o' || findVow == 'u') {
+					vows1 += findVow;
+				}
+				
+			}
+			
+			for (int i = 0; i < o2.length(); i++) {
+				
+				char findVow = o2.charAt(i);
+				
+				if(findVow == 'a' || findVow == 'e' || findVow == 'i' || findVow == 'o' || findVow == 'u') {
+					vows2 += findVow;
+				}
+				
+			}
+			
+			return vows2.length() - vows1.length();
 		}
 	}
 
@@ -54,6 +78,8 @@ public class Main {
 					System.out.println(i++ + "-" + g);
 					
 				}
+				
+				
 			}else if(putGift == false && gifts.size() == 0) {
 				System.out.println("Non hai inserito nessun regalo :/");
 			}
