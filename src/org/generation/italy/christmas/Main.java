@@ -36,9 +36,13 @@ public class Main {
 			if(putGift == false && gifts.size() > 0) {
 				sc.close();
 				System.out.println("La tua lista di regali:\n");
+				
+				gifts.sort(null);
+				
+				int i = 0;
 				for(String g : gifts) {
 					
-					System.out.println(g);
+					System.out.println(i++ + "-" + g);
 					
 				}
 			}else if(putGift == false && gifts.size() == 0) {
